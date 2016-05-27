@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Trainote</string>
+    <string name="info">Aplikacja Trainote służy do zapisywania swoich aktywności w formie prostej listy z
+    podziałem na tygodnie. Możemy nawigać między tygodniami poprzez przytrzymanie pola z tygodniem, usuwać,
+        dodawać nawet treningi, których jeszcze nie było!</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="category_array">
+        <item>Bieganie</item>
+        <item>Pływanie</item>
+        <item>Rower</item>
+        <item>Siłownia</item>
+        <item>Inne</item>
+    </string-array>
+    <string-array name="empty_array">
+
+    </string-array>
+</resources>

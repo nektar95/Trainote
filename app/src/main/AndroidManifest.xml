@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.nektar.android.trainote"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:name="android.app.Application"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".NotePagerActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TrainoteAddActivity"
+            android:label="Dodaj aktywność"
+            android:parentActivityName=".NotePagerActivity">
+        </activity>
+        <activity
+            android:name=".TrainoteCategoryActivity"
+            android:label="Zarządzaj kategoriami"
+            android:parentActivityName=".NotePagerActivity">
+        </activity>
+        <activity
+            android:name=".TrainoteInfoActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:label="Info"
+            android:parentActivityName=".NotePagerActivity">
+        </activity>
+    </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+</manifest>

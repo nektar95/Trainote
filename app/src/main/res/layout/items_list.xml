@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:longClickable="true"
+                android:id="@+id/relative_clickable">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:longClickable="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="50"
+            android:longClickable="true"
+            android:id="@+id/list_item_linear">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="28dp"
+                android:textColor="#000040"
+                android:textStyle="bold"
+                android:layout_weight="22"
+                android:id="@+id/list_item_category"
+                android:longClickable="true"/>
+            <TextView
+                android:id="@+id/list_item_date"
+                android:textSize="24dp"
+                android:textAlignment="center"
+
+                android:textColor="#1a001a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/date_box"
+                android:layout_weight="28"/>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="5dp"
+            android:background="#c0c0c0"
+            android:longClickable="true"/>
+        <TextView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="23dp"
+            android:textColor="#120059"
+            android:background="@drawable/border"
+            android:id="@+id/list_item_title"
+            android:longClickable="true"/>
+    </LinearLayout>
+
+
+</RelativeLayout>
