@@ -5,7 +5,7 @@
     <padding android:left="4dp" android:right="4dp" android:top="2dp" android:bottom="2dp"/>
     <!-- view background color -->
     <solid
-        android:color="@color/add_color" >
+        android:color="@color/content" >
     </solid>
 
     <!-- view border color and width -->
@@ -16,7 +16,7 @@
 
     <!-- The radius makes the corners rounded -->
     <corners
-        android:radius="5dp"   >
+        android:radius="1dp"   >
     </corners>
 
 </shape>

@@ -16,7 +16,7 @@
 
     <!-- The radius makes the corners rounded -->
     <corners
-        android:radius="3dp"   >
+        android:radius="1dp"   >
     </corners>
 
 </shape>

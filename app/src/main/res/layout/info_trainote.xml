@@ -8,10 +8,8 @@
         android:layout_height="wrap_content"
         android:text="Trainote"
         android:textAlignment="center"
-        android:textColor="#FFFFFF"
         android:layout_margin="10dp"
         android:textSize="46dp"
-        android:background="@drawable/green_square"
 
         />
     <TextView
@@ -22,12 +20,4 @@
         android:layout_height="wrap_content"
         android:textColor="#1a001a"
         android:text="@string/info"/>
-    <TextView
-        android:layout_margin="10dp"
-        android:textSize="23dp"
-        android:textColor="#1a001a"
-        android:background="@drawable/border"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="A.Kaźmierczak"/>
 </LinearLayout>

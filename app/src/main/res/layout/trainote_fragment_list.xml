@@ -157,11 +157,11 @@
             android:id="@+id/week_area"/>
     </LinearLayout>
     <android.support.v7.widget.RecyclerView
-
+        android:layout_marginTop="10dp"
         android:id="@+id/trainote_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#cce6ff"/>
+        android:background="#FFFFFF"/>
 </LinearLayout>
 <android.support.design.widget.FloatingActionButton
     android:id="@+id/add_button"

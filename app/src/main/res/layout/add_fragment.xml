@@ -27,22 +27,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="15dp"
-                    android:background="@drawable/abc_ab_share_pack_mtrl_alpha"/>
+                    />
             </LinearLayout>
             <View
                 android:layout_width="fill_parent"
-                android:layout_height="4dp"
+                android:layout_height="2dp"
                 android:background="#607893"/>
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="256dp"
+                android:layout_height="230dp"
                 android:textSize="20dp"
                 android:id="@+id/add_text_title"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edit_add"
-
                 android:gravity="top"
-                android:inputType="text"
+                android:inputType="textMultiLine"
                 />
         </LinearLayout>
 
@@ -55,7 +54,6 @@
         android:layout_marginLeft="15dp"
         android:layout_height="wrap_content"
         android:textSize="28dp"
-
         android:layout_gravity="left|bottom"
         android:background="@drawable/date_box"
         />

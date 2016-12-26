@@ -1,13 +1,18 @@
 package com.nektar.android.trainote;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -229,6 +234,26 @@ public class TrainoteFragmentList extends Fragment {
 
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    public  boolean isStoragePermissionGranted() {
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (getActivity().checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED) {
+                return true;
+            } else {
+
+                ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                return false;
+            }
+        }
+        else { //permission is automatically granted on sdk<23 upon installation
+            return true;
+        }
+    }
 
     @Override
     public  View onCreateView(final LayoutInflater inflater,ViewGroup container, Bundle savedInstaneState) {
@@ -292,35 +317,38 @@ public class TrainoteFragmentList extends Fragment {
                                 startActivity(intentCat);
                                 return true;
                             case R.id.export:
+                                isStoragePermissionGranted(); //glupia nakladka ekranowa.
                                 String state = Environment.getExternalStorageState();
 
-                                File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),"TrainoteExport.txt");
+                                if (Environment.MEDIA_MOUNTED.equals(state)) {
+                                    File file = new File(Environment.getExternalStoragePublicDirectory(
+                                            Environment.DIRECTORY_DOCUMENTS),"TrainoteExport.txt");
 
-                                try {
-                                    if(file.exists())
-                                    {
-                                        file.delete();
-                                        file.createNewFile();
+                                    try {
+                                        if (file.exists()) {
+                                            file.delete();
+                                            file.createNewFile();
+                                        } else {
+                                            file.createNewFile();
+                                        }
+
+                                        FileOutputStream f = new FileOutputStream(file);
+                                        List<Note> list1 = NoteContainer.get(getActivity()).getNotes();
+                                        DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                                        for (int i = 0; i < list1.size(); i++) {
+                                            String temp = dateFormat.format(list1.get(i).getDate()) + " " + list1.get(i).getCategory() + " " + list1.get(i).getText() + "\n";
+                                            f.write(temp.getBytes());
+                                        }
+
+                                        f.close();
+                                        Toast.makeText(getActivity(), "Zapisano w Dokumentach", Toast.LENGTH_LONG).show();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                        Toast.makeText(getActivity(), "Zapis niemożliwy", Toast.LENGTH_LONG).show();
                                     }
-
-                                    FileOutputStream f = new FileOutputStream(file);
-                                    List<Note> list1 = NoteContainer.get(getActivity()).getNotes();
-                                    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-                                    for(int i=0;i<list1.size();i++)
-                                    {
-                                        String temp = dateFormat.format(list1.get(i).getDate()) + " " + list1.get(i).getCategory()+" "+list1.get(i).getText()+"\n";
-                                        f.write(temp.getBytes());
-                                    }
-
-                                    f.close();
-                                    Toast.makeText(getActivity(),"Zapisano w Dokumentach",Toast.LENGTH_LONG).show();
-                                } catch (IOException e)
-                                {
-                                    e.printStackTrace();
+                                } else {
+                                    Toast.makeText(getActivity(), "Nie można zapisać", Toast.LENGTH_LONG).show();
                                 }
-
-
-
                                 return true;
                             case R.id.information:
                                 Intent intent = new Intent(getActivity(),TrainoteInfoActivity.class);

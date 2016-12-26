@@ -1,24 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#3399ff</color>
-    <color name="colorAccent">#3399ff</color>
+    <color name="colorPrimary">#3971ff</color>
+    <color name="colorPrimaryDark">#ee0077ff</color>
+    <color name="colorAccent">#3679ff</color>
 
-    <color name="monday">#ff4d4d</color>
-    <color name="tuesday">#57db57</color>
-    <color name="wednesday">#ff944d</color>
-    <color name="thursday"> #e066ff</color>
-    <color name="friday">#196be6</color>
-    <color name="saturday">#ffdb4d</color>
-    <color name="sunday">#00ff80</color>
+    <color name="monday">#d3ff9c8b</color>
+    <color name="tuesday">#e2ffb96f</color>
+    <color name="wednesday">#dbfff479</color>
+    <color name="thursday">#ccb6f078</color>
+    <color name="friday">#d26ce7db</color>
+    <color name="saturday">#c6767ef9</color>
+    <color name="sunday">#d0ee6ff7</color>
 
     <color name="date">#cce0ff</color>
-    <color name="content">#dbdbf0</color>
-    <color name="backDays">#99ceff</color>
+    <color name="content">#E7E7E7</color>
+    <color name="lightwhite">#F5F5F5</color>
+    <color name="backDays">#c3f1ff</color>
     <color name="add_color">#ccb8e0</color>
+    <color name="button">#ccb8e0</color>
 
     <color name="red_square">#7C181A</color>
     <color name="green_square">#228B22</color>
-    <color name="week_square">#00b8e6</color>
+    <color name="week_square">#345a5aff</color>
 </resources>
 
